@@ -1,0 +1,20 @@
+apiVersion: redis.tencentcloud.crossplane.io/v1alpha1
+kind: Instance
+metadata:
+  name: example-redis
+  namespace: crossplane-system
+spec:
+  forProvider:
+    name: example-redis
+    memSize: 256
+    availabilityZone: "ap-hongkong-2"
+    chargeType: "POSTPAID"
+    typeId: 15
+    # operationNetwork: "changeVpc"
+    # no_auth: true
+    passwordSecretRef:
+      key: redis_password
+      name: redis-creds
+      namespace: crossplane-system
+    vpcId: "vpc-hm0wt3bq"
+    subnetId: "subnet-6rxrans5"
