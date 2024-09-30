@@ -1,9 +1,9 @@
 variable "secret_id" {
-  default = "AKID6COdozCIRTWo5IQVQFwW4iTJWuBb0MwV"
+  default = "Your Access ID"
 }
 
 variable "secret_key" {
-  default = "lWSPN4iDhPEKLPdElEZpDcAc7cM2ZxMP"
+  default = "Your Access Key"
 }
 
 variable "regoin" {
