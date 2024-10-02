@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "pre-install-job"
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    metadata:
+      name: "pre-install-job"
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: pre-install-job
+        image: "busybox"
+        command: ["echo", "pre install job echo success"]
